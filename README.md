@@ -1,35 +1,64 @@
-# Access Modifier & Static Field, Method, EncapsulationSoal
-Trans adalah toko penyedia keyboard paling lengkap di Solo. Anda sebagai seorang
-programmer yang handal diminta oleh toko Trans untuk membuat dompet digital bernama
-TransPay. Dompet digital ini dapat digunakan untuk membeli keyboard yang ada pada toko
-tersebut. Perhatikan dua class diagram berikut ini  
+<h1 style="text-align: center;">Minggu 3: Enkapsulasi dan Konstruktor</h1>
 
-![img.png](img.png)
-**Buatlah class TransPay dan class Keyboard** sesuai dengan class diagram di atas. Class
-TransPay akan berperan sebagai dompet digital, sedangkan class Keyboard akan berperan
-sebagai barang yang dapat dibeli oleh user **(perhatikan class Main)**. Berikut adalah
-beberapa hal yang perlu Anda perhatikan dalam membuat class TransPay:
-- **Top up hanya berhasil apabila saldo bernilai lebih dari 0.**
-- **Pembayaran baru dapat dilakukan apabila dua kondisi berikut ini
-  terpenuhi, yaitu:**
-  - Jumlah barang yang dibeli lebih dari 0. Jika tidak terpenuhi maka
-    tampilkanketerangan input jumlah tidak valid.
-  - Jika harga keyboard kurang dari nol maka otomatis harga keyboard
-    akan menjadi nol.
-  - Total biaya pembelian keyboard (jumlah*harga keyboard) kurang dari atau
-    samadengan saldo pembeli. Jika tidak terpenuhi, tampilkan keterangan
-    pembayaran gagal.
-(Hint: Dalam method bayar(jumlah: int, k: Keyboard) terdapat object k dari class
-Keyboard. Anda harus memanfaatkan/memanggil getter untuk mengakses atribut
-harga dan merkModel dari object k tersebut agar dapat melakukan pengecekan,pengurangan saldo, dan menampilkan output)
-Anda tidak perlu mengurangi maupun menambahkan apapun dari class Main. Jalankan
-program Main untuk melakukan serangkaian pengujian. Berikut adalah output yang
-diharapkan dari program Anda:  
-![img_1.png](img_1.png)  
+<div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+    <div style="
+        text-align: center;
+        border: 1px solid black;
+        border-radius: 10px;
+        width: 75%;
+        padding: 10px;
+        ">
+        <h2>Class</h2>
+        <img src="./Class.png">
+    </div>
+</div>
 
-### Poin Penilaian untuk Soal 1:
-- PROGRAM BERHASIL DICOMPILE: gunakan mvn compile (Poin 10)
-- TEST CASE 1: Class TransPay dan class Keyboard memiliki atribut dan method yang sesuai dengan class diagram. (Poin 20)
-- TEST CASE 2: Method untuk melakukan top up terimplementasi dengan baik  dilihat berdasarkanpengujian pada skenario 1. (Poin 20)
-- TEST CASE 3: Method untuk melakukan pembayaran terimplementasi dengan baik dilihatberdasarkan pengujian pada skenario 2. (Poin 20)
-- TEST CASE 4: eksekusi mvn test melalui terminal berhasil dan tidak ada error. (Poin 30)
+Kalian akan diberikan 3 buah class: Main, Petinju, dan Samsak.
+
+- Petinju
+
+  Lengkapilah class Petinju. Class ini mempunyai komponen - komponen yang bisa dilihat di diagram di atas.  
+  <br>
+  Buat sebuah konstruktor Petinju yang menerima parameter :
+    - name : String
+    - kekuatan : int
+
+  Properti <b>nama</b> pada class Petinju memiliki inputan gabungan antara nama dan stamina yang digabung dalam sebuah string, contohnya "Paquito200" dengan nama "Paquito" dan stamina "200"
+  <br>
+  <br>
+  Method <b>tinju</b> menerima parameter :
+    - samsak : Samsak
+
+  Method ini nantinya akan digunakan untuk melakukan tinju kepada object samsak yang telah dibuat, namun perlu diperhatikan tinju pada samsak dilakukan dengan syarat petinju harus memiliki stamina yang cukup untuk melakukan tinjuan, setelah melakukan tinjuan kepada samsak, maka stamina petinju akan berkurang sebanyak kekuatan yang dikeluarkan untuk meninju, kekuatan petinju juga harus lebih dari tingkat kekerasan samsak untuk dapat memberikan sejumlah kerusakan, dan ketika daya tahan samsak sudah habis maka status samsak dinyatakan rusak.
+  Buatlah juga getter dan setternya juga.
+  <br>
+  <br>
+- Samsak
+
+  Lengkapilah class Samsak. Class ini mempunyai komponen - komponen yang bisa dilihat di diagram di atas.  
+  <br>
+  Buat sebuah konstruktor Ternak yang menerima parameter :
+    - dayaTahan : int
+    - tingkatKerusakan : int
+    - rusak : boolean
+
+  <br>
+  Buatlah juga getter dan setternya juga.
+  <br>
+  <br>
+- Main
+  Untuk kelas ini, tujuan utama kalian adalah membuat object yang dibutuhkan, kemudian tinggal memanggil fungsi tinju yang telah dibuat untuk memulai program
+
+## OUTPUT
+Output berhasil meninju hingga samsak hancur
+<br>
+![Contoh Output Berhasil Meninju hingga samsak hancur](Output1.png)
+<br>
+Contoh output ketika stamina petinju habis
+<br>
+![Contoh Output stamina petinju habis](Output2.png)
+<br>
+Contoh output ketika samsak yang dipukul terlalu keras
+<br>
+![Contoh Output samsak terlalu keras](Output3.png)
+
