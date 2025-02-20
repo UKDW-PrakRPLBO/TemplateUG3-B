@@ -34,7 +34,7 @@ public class Main {
 
         while (pukulTerus) {
             if (samsak1.isRusak()==false){
-                if (petinju1.getStamina() <= 0){
+                if (petinju1.getStamina() >= 0){
                     System.out.print("Pukul samsak?(y/n) : ");
                     String pukulLagi = scanner.nextLine();
                     if (pukulLagi.equals("y")) {
